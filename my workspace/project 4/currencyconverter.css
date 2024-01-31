@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(235, 75, 75);
+  background: rgba(164, 195, 196, 0.781);
+}
+
+header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: .5px solid rgb(235, 75, 75);
+  font-family: 'Oswald', sans-serif;
+}
+
+header .header-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+header h1 {
+  margin-left: 45px;
+  font-size: 2.5em;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav a {
+  text-decoration: none;
+  margin: 8px;
+  color: rgb(86, 133, 133);
+  transition: .3s;
+}
+
+header nav a:hover {
+  /* background: rgba(40, 114, 71, 0.562);*/
+  padding: 4px 8px;
+  border-radius: 5px;
+  color: rgb(235, 75, 75);
+  font-weight: 600;
+
+}
+
+main {
+  background: linear-gradient(135deg, rgba(144, 175, 138, 0.918), rgba(48, 45, 37, 0.808));
+  height: 70dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid rgb(235, 75, 75);
+  font-family: 'Montserrat', sans-serif;
+}
+
+main button {
+  border: .5px solid rgb(235, 75, 75);
+  padding: 8px 50px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  background: transparent;
+  color: rgb(235, 75, 75);
+  margin-top: 30px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: .3s;
+}
+
+main button:hover {
+  background: rgb(235, 75, 75);
+  color: aliceblue;
+}
+
+.main-header-div {
+  /* background: rgb(126, 191, 235);*/
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-header-div img {
+  width: 250px;
+  border-radius: 40px;
+  /* border: .5px solid rgb(235, 75, 75);*/
+  margin-right: 30px;
+  padding: 10px;
+}
+
+.title {
+  color: green;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+
+footer {
+  /*background: maroon;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Oswald', sans-serif;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+}
+
+footer img {
+  width: 25px;
+  margin: 15px;
+}
+
+footer div {
+  display: flex;
+  align-items: center;
+}
+
+footer p {
+  margin-right: 50px;
+}

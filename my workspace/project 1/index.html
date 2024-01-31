@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <title>REST API PROJECT</title>
+</head>
+
+<body>
+  <div class="container-div">
+    <div class="search-div">
+      <input type="text" id="input" class="search-box" placeholder="enter a word">
+      <input type="submit" value="search" id="submit" class="search-btn">
+    </div>
+
+    <div class="main-div">
+      <div class="word-div">
+        <img src="images/playbutton.jpg">
+        <h1 id="word"></h1>
+        <h3 id="parts-of-speech"></h3>
+        <h5 id="definition-div"></h5>
+        <p id="example-div"></p>
+      </div>
+
+
+      <div id="display-div">
+      </div>
+      <div id="display-div-2"></div>
+      <div class="audio-controls">
+        <audio>
+          <source type="audio/mp3" id="audio" src="">
+        </audio>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="index.js"></script>
+</body>
+
+</html>
