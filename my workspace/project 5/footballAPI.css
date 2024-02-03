@@ -28,42 +28,10 @@ header h1 {
   color: #fff;
 }
 
-.images-div {
-  /* background: #fff;
-  display: flex; */
-}
-
 .images-div img {
   width: 50px;
   margin: 5px;
 }
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-/* .tooltip::after {
-  content: attr(title);
-  border-radius: 5px;
-  padding: 5px;
-  background-color: #333;
-  color: #0a0707;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  opacity: 0;
-  transform: translateX(-50%);
-  transition: opacity 0.3s ease-in-out;
-  visibility: hidden;
-}
-
-.tooltip:hover::after {
-  visibility: visible;
-  opacity: 1;
-} */
 
 nav {
   display: flex;
