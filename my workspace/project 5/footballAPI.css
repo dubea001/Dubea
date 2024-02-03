@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  color: cornflowerblue;
+  height: 2000px;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: linear-gradient(100deg, #5f1717, #ffdb11);
+  height: 15dvh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+}
+
+header h1 {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
+
+.images-div {
+  /* background: #fff;
+  display: flex; */
+}
+
+.images-div img {
+  width: 50px;
+  margin: 5px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* .tooltip::after {
+  content: attr(title);
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #333;
+  color: #0a0707;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease-in-out;
+  visibility: hidden;
+}
+
+.tooltip:hover::after {
+  visibility: visible;
+  opacity: 1;
+} */
+
+nav {
+  display: flex;
+  background: rgb(75, 22, 22);
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px 20px 10px;
+  position: sticky;
+  top: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: cornflowerblue;
+  font-weight: 500;
+  font-size: 18px;
+  transition: .8s;
+  letter-spacing: 1px;
+}
+
+nav ul li a:hover {
+  text-decoration-line: underline;
+  text-decoration-color: cornflowerblue;
+  text-decoration-thickness: 1.5px;
+  color: rgb(255, 255, 255);
+}
+
+nav input {
+  padding: 6px;
+  border: none;
+  width: 250px;
+  min-width: 200px;
+  margin-right: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+nav input::placeholder {
+  padding-left: 5px;
+  color: #3b3333;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 3px;
+  font-family: inherit;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav div img {
+  padding: 4px;
+  width: 30px;
+  background: #776a09;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+nav div img:hover {
+  background: #ffdb11;
+}
