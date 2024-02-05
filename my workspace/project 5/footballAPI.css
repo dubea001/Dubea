@@ -9,8 +9,8 @@
 
 body {
   background: #ffffff;
-  color: cornflowerblue;
-  height: 2000px;
+  color: #000;
+  height: 100%;
   scroll-behavior: smooth;
 }
 
@@ -25,7 +25,19 @@ header {
 
 header h1 {
   font-family: 'Open Sans', sans-serif;
+}
+
+header h1 a {
+  text-decoration: none;
   color: #fff;
+}
+
+header h1 a:hover {
+  text-decoration-line: underline;
+  text-decoration-color: #fff;
+  text-decoration-thickness: 1px;
+  color: cornflowerblue;
+  transition: 1s;
 }
 
 .images-div img {
@@ -33,21 +45,52 @@ header h1 {
   margin: 5px;
 }
 
+.news-div {
+  display: flex;
+  background: rgb(75, 22, 22);
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  position: sticky;
+  top: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.category-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65%;
+}
+
+.category-div p {
+  text-decoration: none;
+  color: cornflowerblue;
+  cursor: pointer;
+  padding: 4px;
+  transition: .5s;
+}
+
+.category-div p:hover {
+  text-decoration-line: underline;
+  text-decoration-color: cornflowerblue;
+  text-decoration-thickness: 1px;
+  color: rgb(255, 255, 255);
+}
+
 nav {
   display: flex;
   background: rgb(75, 22, 22);
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px 20px 10px;
-  position: sticky;
-  top: 0;
-  font-family: 'Roboto Condensed', sans-serif;
+  padding: 5px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 nav ul {
   display: flex;
-  justify-content: space-between;
-  width: 30%;
+  justify-content: space-around;
+  width: 25%;
 }
 
 nav ul li {
@@ -55,22 +98,21 @@ nav ul li {
 }
 
 nav ul li a {
-  text-decoration: none;
   color: cornflowerblue;
+  text-decoration: none;
   font-weight: 500;
   font-size: 18px;
   transition: .8s;
-  letter-spacing: 1px;
 }
 
 nav ul li a:hover {
   text-decoration-line: underline;
   text-decoration-color: cornflowerblue;
-  text-decoration-thickness: 1.5px;
+  text-decoration-thickness: 1px;
   color: rgb(255, 255, 255);
 }
 
-nav input {
+.search-box-div input {
   padding: 6px;
   border: none;
   width: 250px;
@@ -82,7 +124,7 @@ nav input {
   display: none;
 }
 
-nav input::placeholder {
+.search-box-div input::placeholder {
   padding-left: 5px;
   color: #3b3333;
   font-style: italic;
@@ -97,14 +139,44 @@ nav div {
   justify-content: center;
 }
 
-nav div img {
+.search-box-div img {
   padding: 4px;
-  width: 30px;
-  background: #776a09;
+  width: 20px;
+  background: #ffdb11;
   border-radius: 50%;
   cursor: pointer;
 }
 
-nav div img:hover {
-  background: #ffdb11;
+.search-box-div img:hover {
+  background: #776a09;
+}
+
+.main-content-div {
+  margin: auto;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.main-content-div div img {
+  /* width: 50vw; */
+}
+
+.link-to-full-post {
+  text-decoration: none;
+  color: #ff0000;
+  font-weight: 600;
+}
+
+.cover-image {
+  width: 100%;
+}
+
+.parent-news-div {
+  border: 2px solid rgb(0, 0, 0);
+  margin: 5px;
+  padding: 10px;
 }

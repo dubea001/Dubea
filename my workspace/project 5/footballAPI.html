@@ -8,9 +8,16 @@
   <title>Dubea News</title>
 </head>
 
-<body>
+<body onload="fetchNews()">
+  <nav>
+    <ul>
+      <li><a href="">About</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </nav>
+
   <header>
-    <h1>Dubea Magazine</h1>
+    <h1><a href="">Dubea Magazine</a></h1>
     <div class="images-div">
       <!-- images div -->
       <img src="images/desktop.png" title="desktop" class="tooltip">
@@ -19,18 +26,34 @@
     </div>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">Category</a></li>
-      <li><a href="">About</a></li>
-      <li><a href="">Contact</a></li>
-    </ul>
-    <div>
+  <div class="news-div">
+    <div class="category-div">
+      <p onclick="fetchNews()">Home</p>
+      <p onclick="fetchNews(fetchNewsByCategory('business'))">Business</p>
+      <p onclick="fetchNews(fetchNewsByCategory('entertainment'))">Entertainment</p>
+      <p onclick="fetchNews(fetchNewsByCategory('health'))">Health</p>
+      <p onclick="fetchNews(fetchNewsByCategory('science'))">Science</p>
+      <p onclick="fetchNews(fetchNewsByCategory('sports'))">Sports</p>
+      <p onclick="fetchNews(fetchNewsByCategory('technology'))">Technology</p>
+      <p onclick="fetchNews(fetchNewsByCategory('general'))">General</p>
+    </div>
+
+    <div class="search-box-div">
       <input type="text" placeholder="Search..." autocomplete="on" class="hide" id="search">
       <img src="images/search.png" id="search-close-btn">
     </div>
-  </nav>
+  </div>
+
+  <main>
+    <section>
+      <aside></aside>
+      <article>
+        <div class="main-content-div" id="newsArticleDiv">
+        </div>
+      </article>
+      <aside></aside>
+    </section>
+  </main>
 
   <script src="footballAPI.js"></script>
 </body>
