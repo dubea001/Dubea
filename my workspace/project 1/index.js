@@ -41,8 +41,6 @@ async function getWord() {
       const playBtn = document.querySelector("#playBtn");
       playBtn.src = "images/playbutton.jpg";
       playBtn.addEventListener('click', playAudio);
-    } else {
-      return;
     }
   });
 
@@ -57,13 +55,8 @@ async function getWord() {
     let html = "";
     itemValue.forEach((item) => {
       html += `<p class="para-el js-para-el">${item}</p>`;
-      if (itemValue === synonyms) {
-        synonymsDiv.innerHTML = `<h5>Synonyms</h5>${html}`;
-      } else if (itemValue === antonyms) {
-        antonymsDiv.innerHTML = `<h5>Antonyms</h5>${html}`;
-      } else {
-        return;
-      }
+      if (itemValue === synonyms) return synonymsDiv.innerHTML = `<h5>Synonyms</h5>${html}`;
+      if (itemValue === antonyms) return antonymsDiv.innerHTML = `<h5>Antonyms</h5>${html}`;
     })
   };
 
@@ -73,12 +66,7 @@ async function getWord() {
 };
 
 searchBtn.addEventListener('click', () => {
-  if (input.value !== "") {
-    getWord();
-  } else {
-    return;
-  }
+  if (input.value !== "") return getWord();
   input.value = "";
-
 });
 

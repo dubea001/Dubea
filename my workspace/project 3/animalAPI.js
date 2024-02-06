@@ -18,9 +18,7 @@ async function getWeather() {
         'content-type': 'application/json'
       }
     });
-    if (!data.ok) {
-      throw new Error('Request failed!');
-    }
+    if (!data.ok) throw new Error('Request failed!');
     const response = await data.json();
     humidityDiv.innerHTML = `<p>humidity</p>
         <img src="images/icons8-humidity-50.png">

@@ -48,27 +48,29 @@ async function generateRandomUser() {
       if (value === userEmail) {
         popUp.innerHTML = `<p>${fixEmailAddress(userMail)}</p>
         <button class="close-btn" onclick="closePopup()">X</button>`;
-      } else if (value === userContact) {
+      }
+      if (value === userContact) {
         popUp.innerHTML = `<p>phone: ${results.phone}</p>
         <p>tel: ${results.cell}</p>
         <button class="close-btn" onclick="closePopup()">X</button>`;
-      } else if (value === userDOB) {
+      }
+      if (value === userDOB) {
         popUp.innerHTML = `<p>${reversedDateOfBirth(dateOfBirth)}</p>
         <p>${userAge}</p>
         <button class="close-btn" onclick="closePopup()">X</button>`;
-      } else if (value === userLocation) {
+      }
+      if (value === userLocation) {
         popUp.innerHTML = `<p>country: ${location.country}</p>
         <p>state: ${location.state}</p>
         <p>city: ${location.city}</p>
         <p>street: ${location.street.name}, ${location.street.number}</p>
         <button class="close-btn" onclick="closePopup()">X</button>`;
-      } else if (value === userPersonal) {
+      }
+      if (value === userPersonal) {
         popUp.innerHTML = `<p>full name: ${displayName.title}. ${displayName.first} ${displayName.last}</p>
         <p>username: ${results.login.username}</p>
         <p>password: ${results.login.password}</p>
         <button class="close-btn" onclick="closePopup()">X</button>`;
-      } else {
-        return;
       }
     });
 
