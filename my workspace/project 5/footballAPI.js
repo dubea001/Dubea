@@ -1,15 +1,45 @@
 const APIKEY = 'af7ad7b547a04d12830025532398916d';
 const defaultUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${APIKEY}`;
 const newsArticleDiv = document.querySelector('#newsArticleDiv');
+const selectOptionDiv = document.querySelector('#selectOptionDiv');
+const countryArray = [
+  { code: 'us', name: 'United States' },
+  { code: 'ae', name: 'United Arab Emirates' },
+  { code: 'au', name: 'Australia' },
+  { code: 'br', name: 'Brazil' },
+  { code: 'ca', name: 'Canada' },
+  { code: 'ch', name: 'Switzerland' },
+  { code: 'de', name: 'Germany' },
+  { code: 'fr', name: 'France' },
+  { code: 'gb', name: 'United Kingdom' },
+  { code: 'kr', name: 'South Korea' },
+  { code: 'ng', name: 'Nigeria' },
+  { code: 'ru', name: 'Russia' },
+  { code: 'sa', name: 'Saudi Arabia' },
+  { code: 'ua', name: 'Ukraine' }
+];
+
+let selectHtml = '<option disabled selected>select a country</option>';
+countryArray.forEach(item => {
+  let html = `<option value="${item.code}">
+  ${item.name}
+  </option>`;
+  selectHtml += html;
+});
+selectOptionDiv.innerHTML = selectHtml;
 
 async function fetchNews(generatedUrl = defaultUrl) {
   const data = await fetch(generatedUrl);
   const response = await data.json();
-  console.log(response.articles);
   response.articles.forEach(article => {
     function switchTime(value) {
       if (value.slice(0, 2) >= 12) return `${value} pm`;
       if (value.slice(0, 2) < 12) return `${value} am`;
+    }
+    function reversedDateOfBirth(value) {
+      const splitParts = value.split('-');
+      const reversedDate = `${splitParts[2]}/${splitParts[1]}/${splitParts[0]}`
+      return reversedDate;
     }
 
     if (article.url && article.description && article.author && article.source.name !== null) {
@@ -34,20 +64,24 @@ async function fetchNews(generatedUrl = defaultUrl) {
       Source: ${article.source.name}
       </h4>
       <p class="date-published">
-      Date Published: ${article.publishedAt.slice(0, 10)} ${switchTime(article.publishedAt.slice(11, 16))}
+      Date Published: ${reversedDateOfBirth(article.publishedAt.slice(0, 10))} ${switchTime(article.publishedAt.slice(11, 16))}
       </p>
       </div>     
       </div>`;
       newsArticleDiv.innerHTML += generatedHtml;
     }
-
   });
 }
 
-function fetchNewsByCategory(category) {
-  return `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${APIKEY}`;
+function fetchNewsByCategory(defaultCountry = 'us', category) {
+  if (category !== undefined) return `https://newsapi.org/v2/top-headlines?country=${defaultCountry}&category=${category}&apiKey=${APIKEY}`;
+  if (category === undefined) return `https://newsapi.org/v2/top-headlines?country=${defaultCountry}&apiKey=${APIKEY}`;
 }
 
+selectOptionDiv.addEventListener('change', (event) => {
+  const optionUrl = `https://newsapi.org/v2/top-headlines?country=${event.target.value}&apiKey=${APIKEY}`;
+  fetchNews(optionUrl);
+});
 
 const searchCloseBtn = document.querySelector('#search-close-btn');
 function toggleSearchBtn() {
@@ -60,18 +94,19 @@ function toggleSearchBtn() {
     searchCloseBtn.src = "images/search.png";
   }
 };
+
 searchCloseBtn.addEventListener('click', toggleSearchBtn);
 
-
-
 function getNewsBySearch(input) {
-  return `https://newsapi.org/v2/everything?q=${input}&language=en&sortBy=publishedAt&apiKey=${APIKEY}`;
+  return `https://newsapi.org/v2/everything?q=${input}&language=en&searchIn=title&sortBy=publishedAt&apiKey=${APIKEY}`;
 }
 
 const searchBar = document.querySelector('#search');
 searchBar.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
-    let inputValue = this.value;
+    const inputValue = searchBar.value;
     fetchNews(getNewsBySearch(inputValue));
-  }
+    searchBar.value = '';
+  }  
 })
+

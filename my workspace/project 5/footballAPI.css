@@ -140,15 +140,15 @@ nav div {
 }
 
 .search-box-div img {
-  padding: 4px;
-  width: 20px;
-  background: #ffdb11;
+  padding: 6px;
+  width: 25px;
+  background: rgb(194, 188, 188);
   border-radius: 50%;
   cursor: pointer;
 }
 
 .search-box-div img:hover {
-  background: #776a09;
+  background: #ffdb11;
 }
 
 .main-content-div {

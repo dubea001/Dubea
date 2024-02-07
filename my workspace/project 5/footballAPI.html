@@ -8,12 +8,19 @@
   <title>Dubea News</title>
 </head>
 
-<body onload="fetchNews()">
+<body>
+  <!-- onload="fetchNews()" -->
   <nav>
     <ul>
       <li><a href="">About</a></li>
       <li><a href="">Contact</a></li>
     </ul>
+    <div>
+      <select class="pick-country" id="selectOptionDiv">
+        <!-- the select options are generated in javascript -->
+      </select>     
+    </div>
+
   </nav>
 
   <header>
@@ -25,17 +32,17 @@
       <img src="images/smartphone.png" title="mobile" class="tooltip">
     </div>
   </header>
-
+ 
   <div class="news-div">
     <div class="category-div">
       <p onclick="fetchNews()">Home</p>
-      <p onclick="fetchNews(fetchNewsByCategory('business'))">Business</p>
-      <p onclick="fetchNews(fetchNewsByCategory('entertainment'))">Entertainment</p>
-      <p onclick="fetchNews(fetchNewsByCategory('health'))">Health</p>
-      <p onclick="fetchNews(fetchNewsByCategory('science'))">Science</p>
-      <p onclick="fetchNews(fetchNewsByCategory('sports'))">Sports</p>
-      <p onclick="fetchNews(fetchNewsByCategory('technology'))">Technology</p>
-      <p onclick="fetchNews(fetchNewsByCategory('general'))">General</p>
+      <p onclick="fetchNews(fetchNewsByCategory(undefined,'general'))">General</p>
+      <p onclick="fetchNews(fetchNewsByCategory(undefined,'business'))">Business</p>
+      <p onclick="fetchNews(fetchNewsByCategory(undefined,'entertainment'))">Entertainment</p>
+      <p onclick="fetchNews(fetchNewsByCategory(undefined,'health'))">Health</p>
+      <p onclick="fetchNews(fetchNewsByCategory(undefined,'science'))">Science</p>
+      <p onclick="fetchNews(fetchNewsByCategory(undefined,'sports'))">Sports</p>
+      <p onclick="fetchNews(fetchNewsByCategory(undefined,'technology'))">Technology</p>
     </div>
 
     <div class="search-box-div">
@@ -46,12 +53,8 @@
 
   <main>
     <section>
-      <aside></aside>
-      <article>
-        <div class="main-content-div" id="newsArticleDiv">
-        </div>
-      </article>
-      <aside></aside>
+          <div class="main-content-div" id="newsArticleDiv">
+          </div>
     </section>
   </main>
 
