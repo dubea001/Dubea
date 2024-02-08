@@ -2,6 +2,7 @@ const APIKEY = 'af7ad7b547a04d12830025532398916d';
 const defaultUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${APIKEY}`;
 const newsArticleDiv = document.querySelector('#newsArticleDiv');
 const selectOptionDiv = document.querySelector('#selectOptionDiv');
+// const displayCategoryHeader = document.querySelector('#displayCategoryHeader');
 const countryArray = [
   { code: 'us', name: 'United States' },
   { code: 'ae', name: 'United Arab Emirates' },
@@ -29,14 +30,11 @@ countryArray.forEach(item => {
 selectOptionDiv.innerHTML = selectHtml;
 
 async function fetchNews(generatedUrl = defaultUrl) {
+  newsArticleDiv.innerHTML = '';
   const data = await fetch(generatedUrl);
   const response = await data.json();
   response.articles.forEach(article => {
-    function switchTime(value) {
-      if (value.slice(0, 2) >= 12) return `${value} pm`;
-      if (value.slice(0, 2) < 12) return `${value} am`;
-    }
-    function reversedDateOfBirth(value) {
+    function reversedDate(value) {
       const splitParts = value.split('-');
       const reversedDate = `${splitParts[2]}/${splitParts[1]}/${splitParts[0]}`
       return reversedDate;
@@ -44,30 +42,29 @@ async function fetchNews(generatedUrl = defaultUrl) {
 
     if (article.url && article.description && article.author && article.source.name !== null) {
       let generatedHtml = "";
-      generatedHtml += `<div class="parent-news-div">
-      <div class="child-news-div">
-      <img src="${article.urlToImage}" class="cover-image">
+      generatedHtml += `<div class="cover-image" style="background-image: url(${article.urlToImage});">
+      <div class="news-details">
       <h2 class="news-title">
       ${article.title}
-      </h2>
-      </div> 
-      <div class="child-news-div-two">  
+      </h2> 
       <p class="news-description">
-      ${article.description}<br>
+      ${article.description}
       <a href="${article.url}" target="_blank" class="link-to-full-post" title="${article.source.name}">
       Read more
       </a>
       </p>
+      <div class="generated-div">
+      <div class="author-div">
+      <img src="images/author.png" class="author-image" title="author">
+      ${article.author.toLowerCase()}
+      </div>
+      <div class="date-div">
+      <img src="images/calender.png" class="date-image" title="date published">
+      ${reversedDate(article.publishedAt.slice(0, 10))}
+      </div>
+      </div>
       </div> 
-      <div class="child-news-div-three">
-      <h4 class="news-source">
-      Source: ${article.source.name}
-      </h4>
-      <p class="date-published">
-      Date Published: ${reversedDateOfBirth(article.publishedAt.slice(0, 10))} ${switchTime(article.publishedAt.slice(11, 16))}
-      </p>
-      </div>     
-      </div>`;
+      </div>`;    
       newsArticleDiv.innerHTML += generatedHtml;
     }
   });

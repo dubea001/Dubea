@@ -8,24 +8,17 @@
   <title>Dubea News</title>
 </head>
 
-<body>
-  <!-- onload="fetchNews()" -->
-  <nav>
-    <ul>
-      <li><a href="">About</a></li>
-      <li><a href="">Contact</a></li>
-    </ul>
-    <div>
+<body  onload="fetchNews(undefined)">
+  <!-- -->
+  <div class="select-div">
       <select class="pick-country" id="selectOptionDiv">
         <!-- the select options are generated in javascript -->
       </select>     
-    </div>
+  </div>
 
-  </nav>
-
-  <header>
+  <header class="header">
     <h1><a href="">Dubea Magazine</a></h1>
-    <div class="images-div">
+    <div class="images-div" id="view-type">
       <!-- images div -->
       <img src="images/desktop.png" title="desktop" class="tooltip">
       <img src="images/tablet.png" title="tablet" class="tooltip">
@@ -35,14 +28,14 @@
  
   <div class="news-div">
     <div class="category-div">
-      <p onclick="fetchNews()">Home</p>
-      <p onclick="fetchNews(fetchNewsByCategory(undefined,'general'))">General</p>
+      <p onclick="fetchNews(undefined)">Home</p>
       <p onclick="fetchNews(fetchNewsByCategory(undefined,'business'))">Business</p>
       <p onclick="fetchNews(fetchNewsByCategory(undefined,'entertainment'))">Entertainment</p>
       <p onclick="fetchNews(fetchNewsByCategory(undefined,'health'))">Health</p>
       <p onclick="fetchNews(fetchNewsByCategory(undefined,'science'))">Science</p>
       <p onclick="fetchNews(fetchNewsByCategory(undefined,'sports'))">Sports</p>
       <p onclick="fetchNews(fetchNewsByCategory(undefined,'technology'))">Technology</p>
+      <p onclick="fetchNews(fetchNewsByCategory(undefined,'general'))">General</p>
     </div>
 
     <div class="search-box-div">
@@ -51,12 +44,78 @@
     </div>
   </div>
 
-  <main>
-    <section>
-          <div class="main-content-div" id="newsArticleDiv">
-          </div>
+  <main class="main-div">
+    <section class="section-div">
+      <h1 id="displayCategoryHeader">Top Headlines</h1>
+      <div class="main-content-div" id="newsArticleDiv">
+      </div>
     </section>
+
+    <aside class="aside-section">
+      <div class="box one">
+        <h1>popular news</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla aspernatur inventore nostrum! Numquam, 
+          esse voluptas eligendi quibusdam ut expedita eius sed hic eveniet est totam magnam nesciunt quam quis,
+          maxime deserunt? Dicta et ea dolorem fugiat est quos quasi quas eveniet iste molestias facilis earum
+          veniam soluta itaque hic iusto, aliquid quae perspiciatis numquam libero cum! In exercitationem numquam 
+          incidunt nemo non provident dicta consequatur molestias labore aperiam totam vero perferendis, minus aliquid cupiditate
+          quia, magnam eum libero voluptates blanditiis aut. Labore magnam placeat fuga, quam quasi pariatur odio fugiat! Voluptas
+          dolores vitae exercitationem accusantium sequi, veniam hic? Obcaecati, praesentium in? Eos recusandae incidunt suscipit
+          culpa. Distinctio dicta quasi itaque a placeat autem nostrum magni minima atque ea sed voluptatem ratione hic, repellat
+          laboriosam minus reprehenderit in eligendi nihil iusto deleniti obcaecati rem quidem! Neque repudiandae repellat id iure.             
+          Accusamus consequuntur quas debitis autem aut id iure facilis incidunt molestiae possimus doloribus commodi,      
+          veniam pariatur exercitationem ducimus rerum magnam cumque corporis quae. Facere omnis modi repudiandae magnam
+          laudantium voluptatibus porro aliquam rem alias amet. Cumque praesentium illum dolores est consequuntur molestiae
+          quis maiores voluptas laboriosam.
+          Aperiam reprehenderit, provident iste recusandae eius aliquam reiciendis commodi, nesciunt architecto rem, asperiores in? Ea!
+        </p>
+      </div>
+      <div class="box two">
+          <h1>subscribe to our news letter</h1>
+          <p>
+            Lorem, ipsum dolor
+            sit amet consectetur adipisicing elit. Beatae perspiciatis inventore
+            recusandae ea reprehenderit repellendus, fugit culpa eveniet
+            aut. Quaerat officia vero magnam voluptas itaque error dolore
+            sequi exercitationem sit libero velit, minima omnis eligendi
+            alias perferendis accusantium aspernatur, tempora quis dolorum
+            voluptatum quas atque fugiat. Culpa tenetur debitis ea?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At omnis quasi ipsum iste iusto natus consequatur quos tempore nam,
+            autem fugit, illo, deserunt unde ab placeat maxime? Et perferendis amet quo quasi eligendi eveniet accusantium
+            recusandae at sed voluptatibus, totam molestias necessitatibus aliquid eius labore earum quod expedita veritatis
+            magni incidunt explicabo reiciendis fugiat quaerat consectetur? Reprehenderit in tempore molestiae architecto
+            voluptates quod rem, cumque exercitationem officiis recusandae quis, fuga repellendus perspiciatis vel
+            Nostrum reiciendis aut nobis, assumenda fugit adipisci ratione quam excepturi atque,
+            magnam maxime vero repellat quia minus quis in corporis nemo quisquam dolores? Quasi ratione iure itaque.
+        </p>
+      </div>
+      <div class="box three">
+          <h1>editors pick</h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, harum.
+            Esse explicabo provident rerum tenetur voluptatibus eos sed
+            quidem cum, at dicta dolor. Reprehenderit iusto tempore corrupti, temporibus dolorem quia.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem omnis minus ullam est 
+            fugiat dolores commodi facilis eaque aliquid dolore, cumque perspiciatis mollitia 
+            error culpa reprehenderit vitae doloribus maxime asperiores minima reiciendis placeat obcaecati.
+            Laboriosam, nobis ab impedit labore itaque a quasi rerum quo consectetur perspiciatis assumenda?
+            Odit quibusdam eaque aspernatur quis, nobis sunt optio quae harum illum velit error aliquam,
+            et nihil? Earum quod dolores necessitatibus omnis ducimus quam, fugit eaque perferendis 
+            neque iste, magnam ratione ipsa vero modi enim facilis a aliquam sint suscipit fugiat perspiciatis qui ipsam.
+            Minima ex natus dolores repellat excepturi explicabo in non odit?
+          </p>
+      </div>
+    </aside>
+    <!-- <aside>POPULAR ARTICLES</aside> -->
   </main>
+
+
+
+
+  <footer>
+
+  </footer>
 
   <script src="footballAPI.js"></script>
 </body>
